@@ -34,34 +34,27 @@ a {
 }
 
 .site-shell {
-  min-height: 100svh;
-  padding: clamp(1rem, 3vw, 2rem);
-}
-
-.resume-sheet {
   position: relative;
   isolation: isolate;
-  max-width: 980px;
-  margin: 0 auto;
-  padding: clamp(1.5rem, 4vw, 3.75rem);
-  background: linear-gradient(180deg, rgba(248, 247, 242, 0.97), rgba(247, 246, 240, 0.97));
-  box-shadow: 0 24px 80px rgba(16, 16, 16, 0.08);
+  min-height: 100svh;
+  padding: clamp(1rem, 3vw, 2rem);
   overflow: hidden;
 }
 
-.resume-sheet::before {
+.site-shell::before {
   content: "";
   position: absolute;
-  inset: auto auto 12% -14%;
-  width: clamp(18rem, 32vw, 30rem);
+  left: clamp(-18rem, -16vw, -12rem);
+  bottom: clamp(4rem, 10vh, 7rem);
+  width: clamp(22rem, 38vw, 34rem);
   aspect-ratio: 1;
   background: radial-gradient(circle, var(--accent) 0%, rgba(240, 224, 75, 0.82) 35%, rgba(240, 224, 75, 0) 72%);
-  filter: blur(34px);
-  opacity: 0.95;
+  filter: blur(52px);
+  opacity: 0.92;
   z-index: -2;
 }
 
-.resume-sheet::after {
+.site-shell::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -70,6 +63,14 @@ a {
   mix-blend-mode: multiply;
   z-index: -1;
   pointer-events: none;
+}
+
+.resume-sheet {
+  position: relative;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 4vw, 3.75rem);
+  background: transparent;
 }
 
 .resume-grid {
@@ -211,10 +212,6 @@ a {
 }
 
 @media (max-width: 840px) {
-  .resume-sheet {
-    box-shadow: 0 18px 42px rgba(16, 16, 16, 0.08);
-  }
-
   .resume-grid,
   .content-panel {
     grid-template-columns: 1fr;
@@ -230,6 +227,12 @@ a {
 }
 
 @media (max-width: 560px) {
+  .site-shell::before {
+    left: -11rem;
+    bottom: 5rem;
+    width: 20rem;
+  }
+
   .site-shell {
     padding: 0;
   }
@@ -237,7 +240,6 @@ a {
   .resume-sheet {
     min-height: 100svh;
     padding: 1.4rem 1.2rem 2rem;
-    box-shadow: none;
   }
 
   .intro-block h1 {
@@ -270,6 +272,5 @@ a {
     min-height: 297mm;
     max-width: none;
     padding: 16mm 12mm;
-    box-shadow: none;
   }
 }

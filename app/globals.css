@@ -91,8 +91,7 @@ a {
   margin: 0 0 0.85rem;
   font-size: clamp(2rem, 3vw, 2.55rem);
   line-height: 0.95;
-  font-weight: 400;
-  letter-spacing: 0.06em;
+  font-weight: 500;
 }
 
 .body-copy {
@@ -199,6 +198,7 @@ a {
 }
 
 @media (max-width: 840px) {
+
   .resume-grid,
   .content-panel {
     grid-template-columns: 1fr;

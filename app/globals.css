@@ -41,19 +41,6 @@ a {
   overflow: hidden;
 }
 
-.site-shell::before {
-  content: "";
-  position: absolute;
-  left: clamp(-18rem, -16vw, -12rem);
-  bottom: clamp(4rem, 10vh, 7rem);
-  width: clamp(22rem, 38vw, 34rem);
-  aspect-ratio: 1;
-  background: radial-gradient(circle, var(--accent) 0%, rgba(240, 224, 75, 0.82) 35%, rgba(240, 224, 75, 0) 72%);
-  filter: blur(52px);
-  opacity: 0.92;
-  z-index: -2;
-}
-
 .site-shell::after {
   content: "";
   position: absolute;
@@ -227,12 +214,6 @@ a {
 }
 
 @media (max-width: 560px) {
-  .site-shell::before {
-    left: -11rem;
-    bottom: 5rem;
-    width: 20rem;
-  }
-
   .site-shell {
     padding: 0;
   }

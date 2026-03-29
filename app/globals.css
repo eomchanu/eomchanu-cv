@@ -1,0 +1,275 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+
+:root {
+  --page-bg: #f2f1ec;
+  --paper-bg: #f8f7f2;
+  --text: #111111;
+  --muted: rgba(17, 17, 17, 0.84);
+  --rule: rgba(17, 17, 17, 0.72);
+  --accent: rgba(240, 224, 75, 0.92);
+  --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='0.18'/%3E%3C/svg%3E");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--page-bg);
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.92), rgba(242, 241, 236, 0.86)),
+    linear-gradient(180deg, #efeee9 0%, #f2f1ec 100%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-shell {
+  min-height: 100svh;
+  padding: clamp(1rem, 3vw, 2rem);
+}
+
+.resume-sheet {
+  position: relative;
+  isolation: isolate;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 4vw, 3.75rem);
+  background: linear-gradient(180deg, rgba(248, 247, 242, 0.97), rgba(247, 246, 240, 0.97));
+  box-shadow: 0 24px 80px rgba(16, 16, 16, 0.08);
+  overflow: hidden;
+}
+
+.resume-sheet::before {
+  content: "";
+  position: absolute;
+  inset: auto auto 12% -14%;
+  width: clamp(18rem, 32vw, 30rem);
+  aspect-ratio: 1;
+  background: radial-gradient(circle, var(--accent) 0%, rgba(240, 224, 75, 0.82) 35%, rgba(240, 224, 75, 0) 72%);
+  filter: blur(34px);
+  opacity: 0.95;
+  z-index: -2;
+}
+
+.resume-sheet::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--noise);
+  opacity: 0.3;
+  mix-blend-mode: multiply;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.resume-grid {
+  display: grid;
+  grid-template-columns: minmax(210px, 1fr) minmax(0, 2.15fr);
+  gap: clamp(1.5rem, 4vw, 4.5rem);
+}
+
+.intro-column,
+.main-column,
+.skills-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.intro-column {
+  gap: 2.2rem;
+}
+
+.content-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(120px, 0.72fr);
+  gap: clamp(1.5rem, 3vw, 2rem);
+}
+
+.main-column {
+  gap: 2rem;
+}
+
+.intro-block h1 {
+  margin: 0 0 0.85rem;
+  font-size: clamp(2rem, 3vw, 2.55rem);
+  line-height: 0.95;
+  font-weight: 400;
+  letter-spacing: -0.045em;
+}
+
+.body-copy {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.body-copy p,
+.education-card p {
+  margin: 0;
+  font-size: clamp(0.82rem, 0.8vw, 0.94rem);
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.section-block {
+  display: grid;
+  gap: 1rem;
+}
+
+.section-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 1rem;
+  padding-bottom: 0.48rem;
+  border-bottom: 1px solid var(--rule);
+  font-family: "Space Grotesk", "Pretendard", sans-serif;
+  font-size: 0.72rem;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.contact-list,
+.skills-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-list {
+  display: grid;
+  gap: 0.72rem;
+  font-family: "Space Grotesk", "Pretendard", sans-serif;
+  font-size: 0.82rem;
+  text-transform: lowercase;
+}
+
+.contact-list li:last-child {
+  text-transform: uppercase;
+}
+
+.contact-list a {
+  transition: opacity 160ms ease;
+}
+
+.contact-list a:hover {
+  opacity: 0.66;
+}
+
+.experience-list {
+  display: grid;
+  gap: 1.45rem;
+}
+
+.experience-card,
+.education-card {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.meta-text {
+  margin: 0;
+  font-size: 0.76rem;
+  line-height: 1.25;
+  color: rgba(17, 17, 17, 0.72);
+}
+
+.experience-card h3,
+.education-card h3 {
+  margin: 0;
+  font-size: clamp(1.15rem, 1.3vw, 1.45rem);
+  line-height: 1.08;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.skills-column .section-block {
+  gap: 1rem;
+}
+
+.skills-list {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+  padding-top: 0.25rem;
+  font-size: 0.88rem;
+  line-height: 1.35;
+}
+
+.education-block {
+  margin-top: 0.4rem;
+}
+
+@media (max-width: 840px) {
+  .resume-sheet {
+    box-shadow: 0 18px 42px rgba(16, 16, 16, 0.08);
+  }
+
+  .resume-grid,
+  .content-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .content-panel {
+    gap: 2rem;
+  }
+
+  .skills-list {
+    justify-items: start;
+  }
+}
+
+@media (max-width: 560px) {
+  .site-shell {
+    padding: 0;
+  }
+
+  .resume-sheet {
+    min-height: 100svh;
+    padding: 1.4rem 1.2rem 2rem;
+    box-shadow: none;
+  }
+
+  .intro-block h1 {
+    font-size: 2rem;
+  }
+
+  .section-header {
+    font-size: 0.68rem;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  html,
+  body {
+    background: #ffffff;
+  }
+
+  .site-shell {
+    min-height: auto;
+    padding: 0;
+  }
+
+  .resume-sheet {
+    width: 210mm;
+    min-height: 297mm;
+    max-width: none;
+    padding: 16mm 12mm;
+    box-shadow: none;
+  }
+}

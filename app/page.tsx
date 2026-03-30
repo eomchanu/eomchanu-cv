@@ -96,7 +96,7 @@ function ExperienceCard({ item }: { item: ExperienceItem }) {
   return (
     <article className="experience-card">
       <p className="meta-text">{item.period}</p>
-      <h3>{item.company}</h3>
+      <h3 className="hover-echo">{item.company}</h3>
       {item.role ? <p className="role-text">{item.role}</p> : null}
       <div className="body-copy">
         {item.paragraphs.map((paragraph) => (
@@ -114,7 +114,7 @@ export default function Home() {
         <div className="resume-grid">
           <section className="intro-column reveal-block reveal-block-1">
             <header className="intro-block">
-              <h1>엄찬우</h1>
+              <h1 className="hover-echo">엄찬우</h1>
               <div className="body-copy">
                 {summaryParagraphs.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
@@ -155,7 +155,7 @@ export default function Home() {
                   {education.map((item) => (
                     <article className="education-card" key={item.id}>
                       <p className="meta-text">{item.period}</p>
-                      <h3>{item.school}</h3>
+                      <h3 className="hover-echo">{item.school}</h3>
                       <p className="role-text">{item.major}</p>
                       {item.details ? (
                         <div className="body-copy">

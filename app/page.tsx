@@ -98,7 +98,7 @@ function ExperienceCard({ item }: { item: ExperienceItem }) {
       <p className="meta-text">{item.period}</p>
       <h3>{item.company}</h3>
       {item.role ? <p className="role-text">{item.role}</p> : null}
-      <div className="bullet-copy">
+      <div className="body-copy">
         {item.paragraphs.map((paragraph) => (
           <p key={`${item.id}-${paragraph}`}>{paragraph}</p>
         ))}
@@ -158,7 +158,7 @@ export default function Home() {
                       <h3>{item.school}</h3>
                       <p className="role-text">{item.major}</p>
                       {item.details ? (
-                        <div className="bullet-copy">
+                        <div className="body-copy">
                           {item.details.map((detail) => (
                             <p key={`${item.id}-${detail}`}>{detail}</p>
                           ))}

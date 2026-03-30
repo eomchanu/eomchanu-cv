@@ -33,9 +33,8 @@ const experiences: ExperienceItem[] = [
     company: "똑똑주식회사",
     role: "Intern",
     paragraphs: [
-      "Katalon을 활용한 회귀 테스트 스크립트 작성 및 E2E 테스트 모니터링",
-      "Kubernetes 클러스터에 ClickHouse 배포 및 Airflow 배치 파이프라인 구성으로 로그 적재 자동화 (PoC 주도)",
-      "LangGraph + Chainlit 기반 사용자용 챗봇 에이전트 개발 및 고도화 담당 (현재)"
+      "LangGraph + Chainlit 기반 사용자용 챗봇 에이전트 개발 및 고도화 담당 (현재)",
+      "Katalon을 활용한 회귀 테스트 스크립트 작성 및 E2E 테스트 모니터링"
     ]
   },
   {

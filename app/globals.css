@@ -110,32 +110,6 @@ a {
   color: var(--muted);
 }
 
-.bullet-copy {
-  display: grid;
-  gap: 0.55rem;
-}
-
-.bullet-copy p {
-  position: relative;
-  margin: 0;
-  padding-left: 0.95rem;
-  font-size: clamp(0.82rem, 0.8vw, 0.94rem);
-  line-height: 1.45;
-  color: var(--muted);
-}
-
-.bullet-copy p::before {
-  content: "";
-  position: absolute;
-  top: 0.72em;
-  left: 0;
-  width: 0.26rem;
-  height: 0.26rem;
-  border-radius: 999px;
-  background: rgba(17, 17, 17, 0.34);
-  transform: translateY(-50%);
-}
-
 .section-block {
   display: grid;
   gap: 1rem;
@@ -220,7 +194,7 @@ a {
 .skills-list {
   display: grid;
   justify-items: start;
-  gap: 1rem;
+  gap: 0.84rem;
   padding-top: 0.25rem;
   font-size: 0.88rem;
   line-height: 1.35;

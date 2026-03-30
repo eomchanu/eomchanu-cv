@@ -87,6 +87,10 @@ a {
   gap: 2rem;
 }
 
+.skills-column {
+  gap: 2rem;
+}
+
 .intro-block h1 {
   margin: 0 0 0.85rem;
   font-size: clamp(2rem, 3vw, 2.55rem);
@@ -180,13 +184,9 @@ a {
   letter-spacing: -0.04em;
 }
 
-.skills-column .section-block {
-  gap: 1rem;
-}
-
 .skills-list {
   display: grid;
-  justify-items: center;
+  justify-items: start;
   gap: 1rem;
   padding-top: 0.25rem;
   font-size: 0.88rem;
@@ -194,7 +194,7 @@ a {
 }
 
 .education-block {
-  margin-top: 0.4rem;
+  margin-top: 0;
 }
 
 @media (max-width: 840px) {

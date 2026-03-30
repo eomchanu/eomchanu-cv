@@ -132,7 +132,9 @@ export default function Home() {
                   ))}
                 </div>
               </section>
+            </div>
 
+            <aside className="skills-column">
               <section className="section-block education-block">
                 <SectionHeader title="Education" index="03" />
                 <div className="education-list">
@@ -145,9 +147,7 @@ export default function Home() {
                   ))}
                 </div>
               </section>
-            </div>
 
-            <aside className="skills-column">
               <section className="section-block">
                 <SectionHeader title="Skills" index="04" />
                 <ul className="skills-list">

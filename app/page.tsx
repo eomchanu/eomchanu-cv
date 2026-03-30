@@ -33,7 +33,7 @@ const experiences: ExperienceItem[] = [
     company: "똑똑주식회사",
     role: "Intern",
     paragraphs: [
-      "LangGraph + Chainlit 기반 사용자용 챗봇 에이전트 개발 및 고도화 담당 (현재)",
+      "LangGraph + Chainlit 기반 사용자용 챗봇 에이전트 개발 및 고도화 담당",
       "Katalon을 활용한 회귀 테스트 스크립트 작성 및 E2E 테스트 모니터링"
     ]
   },

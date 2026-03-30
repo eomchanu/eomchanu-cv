@@ -9,6 +9,7 @@
   --rule: rgba(17, 17, 17, 0.72);
   --accent: rgba(240, 224, 75, 0.92);
   --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='0.18'/%3E%3C/svg%3E");
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 * {
@@ -64,6 +65,24 @@ a {
   display: grid;
   grid-template-columns: minmax(210px, 1fr) minmax(0, 2.15fr);
   gap: clamp(1.5rem, 4vw, 4.5rem);
+}
+
+.reveal-block {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: reveal-block 920ms var(--ease-out-soft) forwards;
+}
+
+.reveal-block-1 {
+  animation-delay: 200ms;
+}
+
+.reveal-block-2 {
+  animation-delay: 400ms;
+}
+
+.reveal-block-3 {
+  animation-delay: 600ms;
 }
 
 .intro-column,
@@ -239,6 +258,14 @@ a {
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .reveal-block {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
 @media print {
   @page {
     size: A4;
@@ -260,5 +287,17 @@ a {
     min-height: 297mm;
     max-width: none;
     padding: 16mm 12mm;
+  }
+}
+
+@keyframes reveal-block {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

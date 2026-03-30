@@ -112,7 +112,7 @@ export default function Home() {
     <main className="site-shell">
       <article className="resume-sheet">
         <div className="resume-grid">
-          <section className="intro-column">
+          <section className="intro-column reveal-block reveal-block-1">
             <header className="intro-block">
               <h1>엄찬우</h1>
               <div className="body-copy">
@@ -137,7 +137,7 @@ export default function Home() {
           </section>
 
           <section className="content-panel">
-            <div className="main-column">
+            <div className="main-column reveal-block reveal-block-2">
               <section className="section-block">
                 <SectionHeader title="Experience" index="02" />
                 <div className="experience-list">
@@ -148,7 +148,7 @@ export default function Home() {
               </section>
             </div>
 
-            <aside className="skills-column">
+            <aside className="skills-column reveal-block reveal-block-3">
               <section className="section-block education-block">
                 <SectionHeader title="Education" index="03" />
                 <div className="education-list">

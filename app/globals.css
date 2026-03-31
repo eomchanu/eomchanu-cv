@@ -1,15 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap");
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
 
 :root {
   --page-bg: #f2f1ec;
-  --paper-bg: #f8f7f2;
   --text: #111111;
   --muted: rgba(17, 17, 17, 0.84);
   --rule: rgba(17, 17, 17, 0.72);
-  --accent: rgba(240, 224, 75, 0.92);
   --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='0.18'/%3E%3C/svg%3E");
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --side-column-min-width: 240px;
+  --experience-column-width: 440px;
+  --font-body: "SUIT Variable", "Pretendard Variable", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  --font-display: "Space Grotesk", "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
 }
 
 * {
@@ -23,7 +24,7 @@ html {
 body {
   margin: 0;
   color: var(--text);
-  font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  font-family: var(--font-body), "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
   background:
     radial-gradient(circle at top left, rgba(255, 255, 255, 0.92), rgba(242, 241, 236, 0.86)),
     linear-gradient(180deg, #efeee9 0%, #f2f1ec 100%);
@@ -55,7 +56,7 @@ a {
 
 .resume-sheet {
   position: relative;
-  max-width: 980px;
+  max-width: 1080px;
   margin: 0 auto;
   padding: clamp(1.5rem, 4vw, 3.75rem);
   background: transparent;
@@ -63,8 +64,12 @@ a {
 
 .resume-grid {
   display: grid;
-  grid-template-columns: minmax(230px, 0.92fr) minmax(0, 3.05fr);
-  gap: clamp(1.5rem, 4vw, 4.5rem);
+  grid-template-columns:
+    minmax(var(--side-column-min-width), 1fr)
+    minmax(0, var(--experience-column-width))
+    minmax(var(--side-column-min-width), 1fr);
+  column-gap: clamp(1.5rem, 3vw, 2.4rem);
+  align-items: start;
 }
 
 .reveal-block {
@@ -93,10 +98,6 @@ a {
 }
 
 .intro-column {
-  gap: 2.2rem;
-}
-
-.main-column {
   gap: 2rem;
 }
 
@@ -130,10 +131,13 @@ a {
 }
 
 .section-header {
-  display: block;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 1rem;
   padding-bottom: 0.48rem;
   border-bottom: 1px solid var(--rule);
-  font-family: "Space Grotesk", "Pretendard", sans-serif;
+  font-family: var(--font-display), "Avenir Next", "Helvetica Neue", sans-serif;
   font-size: 0.72rem;
   line-height: 1;
   text-transform: uppercase;
@@ -150,7 +154,7 @@ a {
 .contact-list {
   display: grid;
   gap: 0.72rem;
-  font-family: "Space Grotesk", "Pretendard", sans-serif;
+  font-family: var(--font-display), "Avenir Next", "Helvetica Neue", sans-serif;
   font-size: 0.82rem;
   text-transform: lowercase;
 }
@@ -225,38 +229,11 @@ a {
   line-height: 1.35;
 }
 
-.education-block {
-  margin-top: 0;
-}
-
 @media (max-width: 840px) {
   .resume-grid {
     grid-template-columns: 1fr;
     row-gap: 2.4rem;
-  }
-
-  .intro-column {
-    display: contents;
-  }
-
-  .intro-block {
-    order: 1;
-  }
-
-  .contacts-block {
-    order: 2;
-  }
-
-  .main-column {
-    order: 3;
-  }
-
-  .education-block {
-    order: 4;
-  }
-
-  .skills-block {
-    order: 5;
+    column-gap: 0;
   }
 
   .skills-list {

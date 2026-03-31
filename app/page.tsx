@@ -82,10 +82,22 @@ const education: EducationItem[] = [
 
 const skills = ["Flutter / Dart", "SwiftUI / Swift", "React / TypeScript", "LangGraph", "Git", "Figma"];
 
-function SectionHeader({ title }: { title: string }) {
+function getContactLinkProps(href: string) {
+  if (href.startsWith("http")) {
+    return {
+      target: "_blank",
+      rel: "noreferrer"
+    } as const;
+  }
+
+  return {};
+}
+
+function SectionHeader({ title, index }: { title: string; index: string }) {
   return (
     <div className="section-header">
       <span>{title}</span>
+      <span>{index}</span>
     </div>
   );
 }
@@ -121,20 +133,33 @@ export default function Home() {
             </header>
 
             <section className="section-block contacts-block">
-              <SectionHeader title="Contacts" />
+              <SectionHeader title="Contacts" index="01" />
               <ul className="contact-list">
                 {contacts.map((contact) => (
                   <li key={contact.label}>
-                    <a href={contact.href} target="_blank" rel="noreferrer">
+                    <a href={contact.href} {...getContactLinkProps(contact.href)}>
                       {contact.value}
                     </a>
                   </li>
                 ))}
               </ul>
             </section>
+          </section>
 
+          <section className="main-column reveal-block reveal-block-2">
+            <section className="section-block">
+              <SectionHeader title="Experience" index="02" />
+              <div className="experience-list">
+                {experiences.map((item) => (
+                  <ExperienceCard key={item.id} item={item} />
+                ))}
+              </div>
+            </section>
+          </section>
+
+          <aside className="skills-column reveal-block reveal-block-3">
             <section className="section-block education-block">
-              <SectionHeader title="Education" />
+              <SectionHeader title="Education" index="03" />
               <div className="education-list">
                 {education.map((item) => (
                   <article className="education-card" key={item.id}>
@@ -154,25 +179,14 @@ export default function Home() {
             </section>
 
             <section className="section-block skills-block">
-              <SectionHeader title="Skills" />
+              <SectionHeader title="Skills" index="04" />
               <ul className="skills-list">
                 {skills.map((skill) => (
                   <li key={skill}>{skill}</li>
                 ))}
               </ul>
             </section>
-          </section>
-
-          <section className="main-column reveal-block reveal-block-2">
-            <section className="section-block">
-              <SectionHeader title="Experience" />
-              <div className="experience-list">
-                {experiences.map((item) => (
-                  <ExperienceCard key={item.id} item={item} />
-                ))}
-              </div>
-            </section>
-          </section>
+          </aside>
         </div>
       </article>
     </main>

@@ -63,7 +63,7 @@ a {
 
 .resume-grid {
   display: grid;
-  grid-template-columns: minmax(210px, 1fr) minmax(0, 2.15fr);
+  grid-template-columns: minmax(230px, 0.92fr) minmax(0, 3.05fr);
   gap: clamp(1.5rem, 4vw, 4.5rem);
 }
 
@@ -94,12 +94,6 @@ a {
 
 .intro-column {
   gap: 2.2rem;
-}
-
-.content-panel {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(150px, 0.86fr);
-  gap: clamp(1.5rem, 3vw, 2rem);
 }
 
 .main-column {
@@ -136,10 +130,7 @@ a {
 }
 
 .section-header {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: start;
-  gap: 1rem;
+  display: block;
   padding-bottom: 0.48rem;
   border-bottom: 1px solid var(--rule);
   font-family: "Space Grotesk", "Pretendard", sans-serif;
@@ -206,6 +197,9 @@ a {
 }
 
 .hover-echo {
+  display: inline-block;
+  width: fit-content;
+  justify-self: start;
   transition:
     color 240ms var(--ease-out-soft),
     transform 240ms var(--ease-out-soft);
@@ -236,14 +230,33 @@ a {
 }
 
 @media (max-width: 840px) {
-
-  .resume-grid,
-  .content-panel {
+  .resume-grid {
     grid-template-columns: 1fr;
+    row-gap: 2.4rem;
   }
 
-  .content-panel {
-    gap: 2rem;
+  .intro-column {
+    display: contents;
+  }
+
+  .intro-block {
+    order: 1;
+  }
+
+  .contacts-block {
+    order: 2;
+  }
+
+  .main-column {
+    order: 3;
+  }
+
+  .education-block {
+    order: 4;
+  }
+
+  .skills-block {
+    order: 5;
   }
 
   .skills-list {

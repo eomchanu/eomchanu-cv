@@ -83,11 +83,10 @@ const education: EducationItem[] = [
 
 const skills = ["Flutter / Dart", "SwiftUI", "React", "LangGraph", "Git", "Figma"];
 
-function SectionHeader({ title, index }: { title: string; index: string }) {
+function SectionHeader({ title }: { title: string }) {
   return (
     <div className="section-header">
       <span>{title}</span>
-      <span>{index}</span>
     </div>
   );
 }
@@ -122,8 +121,8 @@ export default function Home() {
               </div>
             </header>
 
-            <section className="section-block">
-              <SectionHeader title="Contacts" index="01" />
+            <section className="section-block contacts-block">
+              <SectionHeader title="Contacts" />
               <ul className="contact-list">
                 {contacts.map((contact) => (
                   <li key={contact.label}>
@@ -134,50 +133,46 @@ export default function Home() {
                 ))}
               </ul>
             </section>
+
+            <section className="section-block education-block">
+              <SectionHeader title="Education" />
+              <div className="education-list">
+                {education.map((item) => (
+                  <article className="education-card" key={item.id}>
+                    <p className="meta-text">{item.period}</p>
+                    <h3 className="hover-echo">{item.school}</h3>
+                    <p className="role-text">{item.major}</p>
+                    {item.details ? (
+                      <div className="body-copy">
+                        {item.details.map((detail) => (
+                          <p key={`${item.id}-${detail}`}>{detail}</p>
+                        ))}
+                      </div>
+                    ) : null}
+                  </article>
+                ))}
+              </div>
+            </section>
+
+            <section className="section-block skills-block">
+              <SectionHeader title="Skills" />
+              <ul className="skills-list">
+                {skills.map((skill) => (
+                  <li key={skill}>{skill}</li>
+                ))}
+              </ul>
+            </section>
           </section>
 
-          <section className="content-panel">
-            <div className="main-column reveal-block reveal-block-2">
-              <section className="section-block">
-                <SectionHeader title="Experience" index="02" />
-                <div className="experience-list">
-                  {experiences.map((item) => (
-                    <ExperienceCard key={item.id} item={item} />
-                  ))}
-                </div>
-              </section>
-            </div>
-
-            <aside className="skills-column reveal-block reveal-block-3">
-              <section className="section-block education-block">
-                <SectionHeader title="Education" index="03" />
-                <div className="education-list">
-                  {education.map((item) => (
-                    <article className="education-card" key={item.id}>
-                      <p className="meta-text">{item.period}</p>
-                      <h3 className="hover-echo">{item.school}</h3>
-                      <p className="role-text">{item.major}</p>
-                      {item.details ? (
-                        <div className="body-copy">
-                          {item.details.map((detail) => (
-                            <p key={`${item.id}-${detail}`}>{detail}</p>
-                          ))}
-                        </div>
-                      ) : null}
-                    </article>
-                  ))}
-                </div>
-              </section>
-
-              <section className="section-block">
-                <SectionHeader title="Skills" index="04" />
-                <ul className="skills-list">
-                  {skills.map((skill) => (
-                    <li key={skill}>{skill}</li>
-                  ))}
-                </ul>
-              </section>
-            </aside>
+          <section className="main-column reveal-block reveal-block-2">
+            <section className="section-block">
+              <SectionHeader title="Experience" />
+              <div className="experience-list">
+                {experiences.map((item) => (
+                  <ExperienceCard key={item.id} item={item} />
+                ))}
+              </div>
+            </section>
           </section>
         </div>
       </article>

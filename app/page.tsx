@@ -33,10 +33,9 @@ const experiences: ExperienceItem[] = [
     company: "똑똑주식회사",
     role: "Intern",
     paragraphs: [
-      "LangGraph 기반 챗봇 에이전트 개발 및 고도화 담당",
+      "챗봇 에이전트 고도화와 QA 자동화 개선을 함께 담당",
       "기존 단방향 그래프 구조로는 처리하기 어려웠던 복합 질문에 대응하기 위해, 다중 API 호출을 조합할 수 있는 루프 구조를 설계해 챗봇 응답 커버리지를 확장",
-      "Katalon을 활용한 회귀 테스트 스크립트 작성 및 E2E 테스트 모니터링",
-      "네트워크 요청 완료 전 UI 인터랙션이 실행되며 발생하던 flaky test 문제를 분석하고, 네트워크 idle 상태를 확인한 뒤 다음 동작을 수행하는 Groovy 커스텀 키워드(SmartWait)를 구현해 회귀 테스트 안정성을 높이고 테스트 유지보수 비용을 절감"
+      "네트워크 요청 완료 전 UI 인터랙션이 실행되며 발생하던 flaky test를 줄이기 위해, 네트워크 idle 상태를 확인한 뒤 다음 액션을 수행하는 범용 커스텀 키워드를 구현해 회귀 테스트 안정성을 개선"
     ]
   },
   {
@@ -46,8 +45,8 @@ const experiences: ExperienceItem[] = [
     role: "Mobile App. Developer",
     paragraphs: [
       "고객용 모바일 앱 단독 개발",
-      "Riverpod AsyncNotifier와 GoRouter 기반으로 인증 상태, 화면 전환, 비동기 요청 흐름을 분리해 관리 가능한 구조를 설계",
-      "낙관적 UI 업데이트와 아이템별 락킹 패턴을 적용해 즐겨찾기 기능의 동시성 문제를 해결하고 데이터 일관성을 유지"
+      "Riverpod AsyncNotifier·GoRouter 기반으로 인증 상태와 회원가입/리다이렉트 플로우를 중앙에서 관리해 사용자 상태에 따른 화면 전환 흐름을 일관되게 유지",
+      "즐겨찾기 토글에 낙관적 UI 업데이트와 아이템별 락킹을 적용해 연속 탭 상황의 중복 요청과 UI 상태 불일치 방지"
     ]
   },
   {
@@ -81,7 +80,7 @@ const education: EducationItem[] = [
   }
 ];
 
-const skills = ["Flutter / Dart", "SwiftUI", "React", "LangGraph", "Git", "Figma"];
+const skills = ["Flutter / Dart", "SwiftUI / Swift", "React / TypeScript", "LangGraph", "Git", "Figma"];
 
 function SectionHeader({ title }: { title: string }) {
   return (
